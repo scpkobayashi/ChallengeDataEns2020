@@ -1,4 +1,0 @@
-train: counter_data/images/train
-validation: counter_data/images/validation
-nc: 1
-names : ["counter"]
