@@ -246,9 +246,13 @@ if __name__ == '__main__':
     parser.add_argument('--grad_clip', type=float, default=5, help='gradient clipping value. default=5')
     parser.add_argument('--baiduCTC', action='store_true', help='for data_filtering_off mode')
     """ Data processing """
-    parser.add_argument('--select_data', type=str, default='MJ-ST',
+#     parser.add_argument('--select_data', type=str, default='MJ-ST',
+#                         help='select training data (default is MJ-ST, which means MJ and ST used as training data)')
+    parser.add_argument('--select_data', type=str, default='/',
                         help='select training data (default is MJ-ST, which means MJ and ST used as training data)')
-    parser.add_argument('--batch_ratio', type=str, default='0.5-0.5',
+#     parser.add_argument('--batch_ratio', type=str, default='0.5-0.5',
+#                         help='assign ratio for each selected data in the batch')
+    parser.add_argument('--batch_ratio', type=str, default='1',
                         help='assign ratio for each selected data in the batch')
     parser.add_argument('--total_data_usage_ratio', type=str, default='1.0',
                         help='total data usage ratio, this ratio is multiplied to total number of data.')
@@ -256,8 +260,10 @@ if __name__ == '__main__':
     parser.add_argument('--imgH', type=int, default=32, help='the height of the input image')
     parser.add_argument('--imgW', type=int, default=100, help='the width of the input image')
     parser.add_argument('--rgb', action='store_true', help='use rgb input')
+#     parser.add_argument('--character', type=str,
+#                         default='0123456789abcdefghijklmnopqrstuvwxyz', help='character label')
     parser.add_argument('--character', type=str,
-                        default='0123456789abcdefghijklmnopqrstuvwxyz', help='character label')
+                        default='0123456789', help='character label')
     parser.add_argument('--sensitive', action='store_true', help='for sensitive character mode')
     parser.add_argument('--PAD', action='store_true', help='whether to keep ratio then pad for image resize')
     parser.add_argument('--data_filtering_off', action='store_true', help='for data_filtering_off mode')
